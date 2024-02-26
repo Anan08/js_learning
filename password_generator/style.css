@@ -97,3 +97,17 @@ body {
     justify-content: space-between;
     font-size: 14px;
 }
+
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttonContainer select {
+    width: 200px;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}

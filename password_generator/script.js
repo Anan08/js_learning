@@ -1,15 +1,17 @@
 let passwordBox = document.getElementById("Password");
-let length = 8;
+let length = 0;
 
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let lowercase = upperCase.toLowerCase();
-let specialChar = "!@#$%^&*()_+={}:;[]',.<>/?";
+let specialChar = "!@#$%^&*()_+={}:;[],.<>/?";
 let number = "0123456789";
 let allChar = upperCase + lowercase + specialChar + number;
 let lastPass = []
 
 
 function createPassword() {
+    let  value = changeLenght();
+    length = value;
     let password = "";
     
     password += upperCase[Math.floor(Math.random() * upperCase.length)]
@@ -24,7 +26,7 @@ function createPassword() {
     passwordBox.value = password;
 
     if (lastPass.length > 4) {
-        firstElement = lastPass.shift();
+        let firstElement = lastPass.shift();
         firstElement = password;
         lastPass.push(firstElement);
 
@@ -61,5 +63,13 @@ function showLatestPass() {
     text += "</ul>";
     latestPassContainer.innerHTML = text;
  
+}
+
+
+function changeLenght(){
+    let len = document.getElementById("len");
+    let value = len.value;
+    return value;
+
 }
 
